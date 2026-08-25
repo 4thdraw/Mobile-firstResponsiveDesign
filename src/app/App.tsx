@@ -27,11 +27,11 @@ function useSEO() {
     setOg("og:description", "도심의 소음 너머 온전한 쉼이 시작되는 곳, 고요. 정갈한 한옥에서 명인의 전통 체험과 함께 일상의 여유를 되찾으세요.");
     setOg("og:type", "website");
     setOg("og:locale", "ko_KR");
-    setOg("og:image", "/images/hero/hero-background.png");
+    setOg("og:image", "/images/hero/hero-background.jpg");
     setMeta("twitter:card", "summary_large_image");
     setMeta("twitter:title", "고요(GOYO) — 한옥에서 보내는 온전한 쉼의 시간");
     setMeta("twitter:description", "도심의 소음 너머 온전한 쉼이 시작되는 곳, 고요. 정갈한 한옥에서 명인의 전통 체험과 함께 일상의 여유를 되찾으세요.");
-    setMeta("twitter:image", "/images/hero/hero-background.png");
+    setMeta("twitter:image", "/images/hero/hero-background.jpg");
   }, []);
 }
 
@@ -335,7 +335,7 @@ export default function App() {
             <img
               alt="고요 한옥 전경"
               className="absolute object-cover size-full"
-              src="/images/hero/hero-background.png"
+              src="/images/hero/hero-background.jpg"
             />
             <div
               className="absolute inset-0"
@@ -412,7 +412,7 @@ export default function App() {
               {/* Cards — stacked on mobile/tablet, two-column on desktop */}
               <div className="flex flex-col xl:flex-row gap-2 md:gap-3 xl:gap-6">
                 <QCard
-                  img="/images/quration/hanok-teahouse.png"
+                  img="/images/quration/hanok-teahouse.jpg"
                   alt="다도실이 있는 한옥"
                   badge="인기 한옥"
                   title="다도실이 있는 한옥"
@@ -420,13 +420,13 @@ export default function App() {
                 />
                 <div className="flex flex-col gap-2 md:gap-3 xl:gap-6 xl:flex-1">
                   <QCard
-                    img="/images/quration/hanok-hyushimjae.png"
+                    img="/images/quration/hanok-hyushimjae.jpg"
                     alt="책과 사색이 머무는 휴심재"
                     badge="추천 한옥"
                     title="책과 사색이 머무는 휴심재"
                   />
                   <QCard
-                    img="/images/quration/hanok-detached.png"
+                    img="/images/quration/hanok-detached.jpg"
                     alt="넓은 마당이 있는 독채 숙소"
                     badge="대표 한옥"
                     title="넓은 마당이 있는 독채 숙소"
@@ -488,7 +488,7 @@ export default function App() {
                 <img
                   alt="한옥 내부 풍경"
                   className="absolute inset-0 w-full h-full object-cover"
-                  src="/images/form/form-hanok.png"
+                  src="/images/form/form-hanok.jpg"
                 />
               </div>
             </div>
@@ -510,10 +510,10 @@ export default function App() {
             </div>
 
             <HScrollWrap>
-              <TradCard img="/images/traditional-culture/dasik.png" alt="다식만들기 체험" label="달콤한 전통의 맛," title="다식만들기" />
-              <TradCard img="/images/traditional-culture/pottery.png" alt="도자기 공예 체험" label="흙으로 빚어내는 시간," title="도자기 공예" />
-              <TradCard img="/images/traditional-culture/hanbok.png" alt="한복과 예절 체험" label="옷끝에 배어나는 품격," title="한복과 예절 체험" />
-              <TradCard img="/images/traditional-culture/tteok.png" alt="전통 떡메치기 체험" label="정성을 들여 만드는 찰진 맛," title="전통 떡메치기" />
+              <TradCard img="/images/traditional-culture/dasik.jpg" alt="다식만들기 체험" label="달콤한 전통의 맛," title="다식만들기" />
+              <TradCard img="/images/traditional-culture/pottery.jpg" alt="도자기 공예 체험" label="흙으로 빚어내는 시간," title="도자기 공예" />
+              <TradCard img="/images/traditional-culture/hanbok.jpg" alt="한복과 예절 체험" label="옷끝에 배어나는 품격," title="한복과 예절 체험" />
+              <TradCard img="/images/traditional-culture/tteok.jpg" alt="전통 떡메치기 체험" label="정성을 들여 만드는 찰진 맛," title="전통 떡메치기" />
             </HScrollWrap>
           </div>
         </section>
