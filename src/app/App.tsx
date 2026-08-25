@@ -1,48 +1,101 @@
 import { useState, useEffect, type ReactNode } from "react";
-import { Menu, X, ChevronRight, ChevronDown } from "lucide-react";
+import {
+  Menu,
+  X,
+  ChevronRight,
+  ChevronDown,
+} from "lucide-react";
 import svgPaths from "@/imports/1920/svg-9ahr6apnr3";
 
 // ─── SEO ──────────────────────────────────────────────────────────────────────
 function useSEO() {
   useEffect(() => {
-    document.title = "고요(GOYO) — 한옥에서 보내는 온전한 쉼의 시간";
+    document.title =
+      "고요(GOYO) — 한옥에서 보내는 온전한 쉼의 시간";
     document.documentElement.lang = "ko";
 
     const setMeta = (name: string, content: string) => {
-      let el = document.querySelector<HTMLMetaElement>(`meta[name="${name}"]`);
-      if (!el) { el = document.createElement("meta"); el.name = name; document.head.appendChild(el); }
+      let el = document.querySelector<HTMLMetaElement>(
+        `meta[name="${name}"]`,
+      );
+      if (!el) {
+        el = document.createElement("meta");
+        el.name = name;
+        document.head.appendChild(el);
+      }
       el.content = content;
     };
     const setOg = (property: string, content: string) => {
-      let el = document.querySelector<HTMLMetaElement>(`meta[property="${property}"]`);
-      if (!el) { el = document.createElement("meta"); el.setAttribute("property", property); document.head.appendChild(el); }
+      let el = document.querySelector<HTMLMetaElement>(
+        `meta[property="${property}"]`,
+      );
+      if (!el) {
+        el = document.createElement("meta");
+        el.setAttribute("property", property);
+        document.head.appendChild(el);
+      }
       el.content = content;
     };
 
-    setMeta("description", "도심의 소음 너머 온전한 쉼이 시작되는 곳, 고요. 정갈한 한옥에서 명인의 전통 체험과 함께 일상의 여유를 되찾으세요.");
-    setMeta("keywords", "고요,GOYO,한옥,전통체험,다도,서예,도자기,한복,한옥숙소,전통문화,명인");
+    setMeta(
+      "description",
+      "도심의 소음 너머 온전한 쉼이 시작되는 곳, 고요. 정갈한 한옥에서 명인의 전통 체험과 함께 일상의 여유를 되찾으세요.",
+    );
+    setMeta(
+      "keywords",
+      "고요,GOYO,한옥,전통체험,다도,서예,도자기,한복,한옥숙소,전통문화,명인",
+    );
     setMeta("robots", "index, follow");
     setMeta("viewport", "width=device-width, initial-scale=1");
-    setOg("og:title", "고요(GOYO) — 한옥에서 보내는 온전한 쉼의 시간");
-    setOg("og:description", "도심의 소음 너머 온전한 쉼이 시작되는 곳, 고요. 정갈한 한옥에서 명인의 전통 체험과 함께 일상의 여유를 되찾으세요.");
+    setOg(
+      "og:title",
+      "고요(GOYO) — 한옥에서 보내는 온전한 쉼의 시간",
+    );
+    setOg(
+      "og:description",
+      "도심의 소음 너머 온전한 쉼이 시작되는 곳, 고요. 정갈한 한옥에서 명인의 전통 체험과 함께 일상의 여유를 되찾으세요.",
+    );
     setOg("og:type", "website");
     setOg("og:locale", "ko_KR");
     setOg("og:image", "/images/hero/hero-background.jpg");
     setMeta("twitter:card", "summary_large_image");
-    setMeta("twitter:title", "고요(GOYO) — 한옥에서 보내는 온전한 쉼의 시간");
-    setMeta("twitter:description", "도심의 소음 너머 온전한 쉼이 시작되는 곳, 고요. 정갈한 한옥에서 명인의 전통 체험과 함께 일상의 여유를 되찾으세요.");
-    setMeta("twitter:image", "/images/hero/hero-background.jpg");
+    setMeta(
+      "twitter:title",
+      "고요(GOYO) — 한옥에서 보내는 온전한 쉼의 시간",
+    );
+    setMeta(
+      "twitter:description",
+      "도심의 소음 너머 온전한 쉼이 시작되는 곳, 고요. 정갈한 한옥에서 명인의 전통 체험과 함께 일상의 여유를 되찾으세요.",
+    );
+    setMeta(
+      "twitter:image",
+      "/images/hero/hero-background.jpg",
+    );
   }, []);
 }
 
 // ─── SVG LOGOS ────────────────────────────────────────────────────────────────
 function GoyoLogoDark({ className }: { className?: string }) {
   return (
-    <svg fill="none" viewBox="0 0 88 32" className={className} xmlns="http://www.w3.org/2000/svg" aria-label="고요 로고">
+    <svg
+      fill="none"
+      viewBox="0 0 88 32"
+      className={className}
+      xmlns="http://www.w3.org/2000/svg"
+      aria-label="고요 로고"
+    >
       <g clipPath="url(#goyo-hd-clip)">
         <path d={svgPaths.p30bb7280} fill="#4E4336" />
         <g>
-          <mask id="goyo-hd-mask" maskUnits="userSpaceOnUse" style={{ maskType: "luminance" }} height="33" width="90" x="-1" y="-1">
+          <mask
+            id="goyo-hd-mask"
+            maskUnits="userSpaceOnUse"
+            style={{ maskType: "luminance" }}
+            height="33"
+            width="90"
+            x="-1"
+            y="-1"
+          >
             <g>
               <path d={svgPaths.p29d19700} fill="white" />
               <path d={svgPaths.p30bb7280} fill="black" />
@@ -53,18 +106,36 @@ function GoyoLogoDark({ className }: { className?: string }) {
           </g>
         </g>
       </g>
-      <defs><clipPath id="goyo-hd-clip"><rect fill="white" height="32" width="88" /></clipPath></defs>
+      <defs>
+        <clipPath id="goyo-hd-clip">
+          <rect fill="white" height="32" width="88" />
+        </clipPath>
+      </defs>
     </svg>
   );
 }
 
 function GoyoLogoLight({ className }: { className?: string }) {
   return (
-    <svg fill="none" viewBox="0 0 88 32" className={className} xmlns="http://www.w3.org/2000/svg" aria-label="고요 로고">
+    <svg
+      fill="none"
+      viewBox="0 0 88 32"
+      className={className}
+      xmlns="http://www.w3.org/2000/svg"
+      aria-label="고요 로고"
+    >
       <g clipPath="url(#goyo-ft-clip)">
         <path d={svgPaths.p30bb7280} fill="#EDE1D4" />
         <g>
-          <mask id="goyo-ft-mask" maskUnits="userSpaceOnUse" style={{ maskType: "luminance" }} height="33" width="90" x="-1" y="-1">
+          <mask
+            id="goyo-ft-mask"
+            maskUnits="userSpaceOnUse"
+            style={{ maskType: "luminance" }}
+            height="33"
+            width="90"
+            x="-1"
+            y="-1"
+          >
             <g>
               <path d={svgPaths.p29d19700} fill="white" />
               <path d={svgPaths.p30bb7280} fill="black" />
@@ -75,18 +146,36 @@ function GoyoLogoLight({ className }: { className?: string }) {
           </g>
         </g>
       </g>
-      <defs><clipPath id="goyo-ft-clip"><rect fill="white" height="32" width="88" /></clipPath></defs>
+      <defs>
+        <clipPath id="goyo-ft-clip">
+          <rect fill="white" height="32" width="88" />
+        </clipPath>
+      </defs>
     </svg>
   );
 }
 
 function GoyoBigLogo({ className }: { className?: string }) {
   return (
-    <svg fill="none" viewBox="0 0 174 63.2727" className={className} xmlns="http://www.w3.org/2000/svg" aria-label="고요 대형 로고">
+    <svg
+      fill="none"
+      viewBox="0 0 174 63.2727"
+      className={className}
+      xmlns="http://www.w3.org/2000/svg"
+      aria-label="고요 대형 로고"
+    >
       <g clipPath="url(#goyo-big-clip)">
         <path d={svgPaths.pf47800} fill="#EDE1D4" />
         <g>
-          <mask id="goyo-big-mask" maskUnits="userSpaceOnUse" style={{ maskType: "luminance" }} height="64" width="177" x="-1" y="-1">
+          <mask
+            id="goyo-big-mask"
+            maskUnits="userSpaceOnUse"
+            style={{ maskType: "luminance" }}
+            height="64"
+            width="177"
+            x="-1"
+            y="-1"
+          >
             <g>
               <path d={svgPaths.p3a3be500} fill="white" />
               <path d={svgPaths.p2dd2a900} fill="black" />
@@ -97,14 +186,28 @@ function GoyoBigLogo({ className }: { className?: string }) {
           </g>
         </g>
       </g>
-      <defs><clipPath id="goyo-big-clip"><rect fill="white" height="63.2727" width="174" /></clipPath></defs>
+      <defs>
+        <clipPath id="goyo-big-clip">
+          <rect fill="white" height="63.2727" width="174" />
+        </clipPath>
+      </defs>
     </svg>
   );
 }
 
-function ChineseTitleSvg({ className }: { className?: string }) {
+function ChineseTitleSvg({
+  className,
+}: {
+  className?: string;
+}) {
   return (
-    <svg fill="none" viewBox="0 0 50.8984 121.469" className={className} xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <svg
+      fill="none"
+      viewBox="0 0 50.8984 121.469"
+      className={className}
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
       <path d={svgPaths.p3b919500} fill="#4E4336" />
       <path d={svgPaths.p3310d800} fill="#4E4336" />
     </svg>
@@ -112,7 +215,13 @@ function ChineseTitleSvg({ className }: { className?: string }) {
 }
 
 // ─── SHARED SUBCOMPONENTS ─────────────────────────────────────────────────────
-function SectionHeader({ title, desc }: { title: string; desc: string }) {
+function SectionHeader({
+  title,
+  desc,
+}: {
+  title: string;
+  desc: string;
+}) {
   return (
     <div className="flex items-start justify-between gap-4">
       <div className="flex flex-col gap-3 xl:gap-5">
@@ -136,7 +245,10 @@ function HScrollWrap({ children }: { children: ReactNode }) {
       className="overflow-x-auto -mx-4 px-4 md:-mx-[120px] md:px-[120px] xl:mx-0 xl:px-0 xl:overflow-x-visible pb-3 xl:pb-0"
       style={{ scrollbarWidth: "none" }}
     >
-      <div className="flex gap-2 md:gap-3 xl:gap-6 xl:w-full" style={{ width: "max-content" }}>
+      <div
+        className="flex gap-2 md:gap-3 xl:gap-6 xl:w-full"
+        style={{ width: "max-content" }}
+      >
         {children}
       </div>
     </div>
@@ -145,9 +257,17 @@ function HScrollWrap({ children }: { children: ReactNode }) {
 
 // ─── QURATION CARD ────────────────────────────────────────────────────────────
 function QCard({
-  img, alt, badge, title, large = false,
+  img,
+  alt,
+  badge,
+  title,
+  large = false,
 }: {
-  img: string; alt: string; badge: string; title: string; large?: boolean;
+  img: string;
+  alt: string;
+  badge: string;
+  title: string;
+  large?: boolean;
 }) {
   return (
     <article
@@ -157,8 +277,15 @@ function QCard({
           : "h-[200px] md:h-[260px] xl:h-[318px]"
       }`}
     >
-      <div aria-hidden className="absolute inset-0 pointer-events-none">
-        <img alt={alt} className="absolute object-cover size-full group-hover:scale-[1.02] transition-transform duration-700" src={img} />
+      <div
+        aria-hidden
+        className="absolute inset-0 pointer-events-none"
+      >
+        <img
+          alt={alt}
+          className="absolute object-cover size-full group-hover:scale-[1.02] transition-transform duration-700"
+          src={img}
+        />
         <div className="absolute inset-0 bg-gradient-to-b from-[50%] from-transparent to-[#4e4336] to-[96%]" />
       </div>
       <div className="relative flex justify-end p-4 xl:p-6">
@@ -167,19 +294,40 @@ function QCard({
         </button>
       </div>
       <div className="relative p-4 xl:p-7">
-        <p className="font-sans font-normal text-[rgba(237,225,212,0.75)] text-[12px] xl:text-[15px] tracking-[-0.36px] leading-[1.7] mb-1 xl:mb-2">{badge}</p>
-        <p className="font-sans font-semibold text-[#ede1d4] text-[17px] xl:text-[22px] tracking-[-0.51px] xl:tracking-[-0.66px] leading-[1.35]">{title}</p>
+        <p className="font-sans font-normal text-[rgba(237,225,212,0.75)] text-[12px] xl:text-[15px] tracking-[-0.36px] leading-[1.7] mb-1 xl:mb-2">
+          {badge}
+        </p>
+        <p className="font-sans font-semibold text-[#ede1d4] text-[17px] xl:text-[22px] tracking-[-0.51px] xl:tracking-[-0.66px] leading-[1.35]">
+          {title}
+        </p>
       </div>
     </article>
   );
 }
 
 // ─── CLASS CARD (명인 서비스) ─────────────────────────────────────────────────
-function ClassCard({ img, alt, title, desc }: { img: string; alt: string; title: string; desc: string }) {
+function ClassCard({
+  img,
+  alt,
+  title,
+  desc,
+}: {
+  img: string;
+  alt: string;
+  title: string;
+  desc: string;
+}) {
   return (
     <article className="relative overflow-clip flex-shrink-0 w-[268px] md:w-[302px] xl:w-[411px] h-[420px] xl:h-[520px] flex flex-col justify-between p-5 xl:p-7 group">
-      <div aria-hidden className="absolute inset-0 pointer-events-none">
-        <img alt={alt} className="absolute object-cover size-full group-hover:scale-[1.02] transition-transform duration-700" src={img} />
+      <div
+        aria-hidden
+        className="absolute inset-0 pointer-events-none"
+      >
+        <img
+          alt={alt}
+          className="absolute object-cover size-full group-hover:scale-[1.02] transition-transform duration-700"
+          src={img}
+        />
         <div className="absolute inset-0 bg-gradient-to-b from-[38%] from-transparent to-[rgba(43,37,31,0.92)] to-[92%]" />
       </div>
       <div className="relative flex justify-end">
@@ -188,28 +336,56 @@ function ClassCard({ img, alt, title, desc }: { img: string; alt: string; title:
         </button>
       </div>
       <div className="relative flex flex-col gap-3 xl:gap-4">
-        <p className="font-sans font-semibold text-[#ede1d4] text-[17px] xl:text-[22px] tracking-[-0.51px] xl:tracking-[-0.66px] leading-[1.4]">{title}</p>
-        <p className="font-sans font-normal text-[rgba(237,225,212,0.8)] text-[13px] xl:text-[17px] tracking-[-0.39px] xl:tracking-[-0.51px] leading-[1.65]">{desc}</p>
+        <p className="font-sans font-semibold text-[#ede1d4] text-[17px] xl:text-[22px] tracking-[-0.51px] xl:tracking-[-0.66px] leading-[1.4]">
+          {title}
+        </p>
+        <p className="font-sans font-normal text-[rgba(237,225,212,0.8)] text-[13px] xl:text-[17px] tracking-[-0.39px] xl:tracking-[-0.51px] leading-[1.65]">
+          {desc}
+        </p>
       </div>
     </article>
   );
 }
 
 // ─── TRADITIONAL CULTURE CARD ─────────────────────────────────────────────────
-function TradCard({ img, alt, label, title }: { img: string; alt: string; label: string; title: string }) {
+function TradCard({
+  img,
+  alt,
+  label,
+  title,
+}: {
+  img: string;
+  alt: string;
+  label: string;
+  title: string;
+}) {
   return (
     <article className="relative overflow-clip flex-shrink-0 w-[234px] md:w-[270px] xl:flex-1 xl:min-w-0 h-[360px] xl:h-[440px] flex flex-col justify-end p-5 xl:p-6 group">
-      <div aria-hidden className="absolute inset-0 pointer-events-none">
-        <img alt={alt} className="absolute object-cover size-full group-hover:scale-[1.02] transition-transform duration-700" src={img} />
+      <div
+        aria-hidden
+        className="absolute inset-0 pointer-events-none"
+      >
+        <img
+          alt={alt}
+          className="absolute object-cover size-full group-hover:scale-[1.02] transition-transform duration-700"
+          src={img}
+        />
         <div className="absolute inset-0 bg-gradient-to-b from-[44%] from-transparent to-[rgba(43,37,31,0.93)]" />
       </div>
       <div className="relative flex items-end justify-between w-full">
         <div>
-          <p className="font-sans font-normal text-[rgba(237,225,212,0.72)] text-[12px] xl:text-[14px] tracking-[-0.36px] leading-[1.8] mb-0.5">{label}</p>
-          <p className="font-sans font-semibold text-[#ede1d4] text-[15px] xl:text-[19px] tracking-[-0.45px] xl:tracking-[-0.57px] leading-[1.35]">{title}</p>
+          <p className="font-sans font-normal text-[rgba(237,225,212,0.72)] text-[12px] xl:text-[14px] tracking-[-0.36px] leading-[1.8] mb-0.5">
+            {label}
+          </p>
+          <p className="font-sans font-semibold text-[#ede1d4] text-[15px] xl:text-[19px] tracking-[-0.45px] xl:tracking-[-0.57px] leading-[1.35]">
+            {title}
+          </p>
         </div>
         <button aria-label={`${title} 자세히 보기`}>
-          <ChevronRight size={15} className="text-[rgba(237,225,212,0.7)]" />
+          <ChevronRight
+            size={15}
+            className="text-[rgba(237,225,212,0.7)]"
+          />
         </button>
       </div>
     </article>
@@ -217,16 +393,34 @@ function TradCard({ img, alt, label, title }: { img: string; alt: string; label:
 }
 
 // ─── REVIEW CARD ──────────────────────────────────────────────────────────────
-function ReviewCard({ name, type, quote, review }: { name: string; type: string; quote: string; review: string }) {
+function ReviewCard({
+  name,
+  type,
+  quote,
+  review,
+}: {
+  name: string;
+  type: string;
+  quote: string;
+  review: string;
+}) {
   return (
     <article className="bg-[#38312a] flex-shrink-0 w-[268px] md:w-[302px] xl:w-[411px] p-6 xl:p-9 flex flex-col justify-between gap-5 xl:gap-6">
       <div>
-        <p className="font-sans font-medium text-[#ede1d4] text-[14px] xl:text-[18px] tracking-[-0.42px] xl:tracking-[-0.54px] leading-[1.5] mb-1">{name}</p>
-        <p className="font-sans font-normal text-[#a3978a] text-[12px] xl:text-[15px] tracking-[-0.36px] xl:tracking-[-0.45px] leading-[1.5]">{type}</p>
+        <p className="font-sans font-medium text-[#ede1d4] text-[14px] xl:text-[18px] tracking-[-0.42px] xl:tracking-[-0.54px] leading-[1.5] mb-1">
+          {name}
+        </p>
+        <p className="font-sans font-normal text-[#a3978a] text-[12px] xl:text-[15px] tracking-[-0.36px] xl:tracking-[-0.45px] leading-[1.5]">
+          {type}
+        </p>
       </div>
       <div>
-        <p className="font-sans font-normal text-[#ede1d4] text-[14px] xl:text-[17px] tracking-[-0.42px] xl:tracking-[-0.51px] leading-[1.65] mb-2 xl:mb-3">{quote}</p>
-        <p className="font-sans font-normal text-[rgba(237,225,212,0.7)] text-[13px] xl:text-[15px] tracking-[-0.39px] xl:tracking-[-0.45px] leading-[1.7] line-clamp-4">{review}</p>
+        <p className="font-sans font-normal text-[#ede1d4] text-[14px] xl:text-[17px] tracking-[-0.42px] xl:tracking-[-0.51px] leading-[1.65] mb-2 xl:mb-3">
+          {quote}
+        </p>
+        <p className="font-sans font-normal text-[rgba(237,225,212,0.7)] text-[13px] xl:text-[15px] tracking-[-0.39px] xl:tracking-[-0.45px] leading-[1.7] line-clamp-4">
+          {review}
+        </p>
       </div>
     </article>
   );
@@ -254,11 +448,9 @@ export default function App() {
 
   return (
     <div className="bg-[#2b251f] min-h-screen w-full font-sans text-[#ede1d4] overflow-x-hidden">
-
       {/* ══════════════════ HEADER ══════════════════ */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-[rgba(255,255,255,0.07)] backdrop-blur-md border-b border-[rgba(237,225,212,0.07)]">
         <div className="flex items-center justify-between px-4 h-14 md:px-10 md:h-[60px] xl:px-[60px] xl:h-[72px]">
-
           <a href="/" aria-label="고요 홈으로">
             <div className="relative w-[50px] h-[18px] md:w-[65px] md:h-[24px] xl:w-[88px] xl:h-[32px]">
               <GoyoLogoDark className="absolute inset-0 w-full h-full" />
@@ -266,16 +458,27 @@ export default function App() {
           </a>
 
           {/* Desktop full nav */}
-          <nav className="hidden xl:flex items-center gap-10" aria-label="주요 메뉴">
+          <nav
+            className="hidden xl:flex items-center gap-10"
+            aria-label="주요 메뉴"
+          >
             <ul className="flex items-center gap-8 font-normal text-[#4e4336] text-[18px] tracking-[-0.54px]">
               {navItems.map(({ label, href }) => (
                 <li key={label}>
-                  <a href={href} className="hover:opacity-55 transition-opacity">{label}</a>
+                  <a
+                    href={href}
+                    className="hover:opacity-55 transition-opacity"
+                  >
+                    {label}
+                  </a>
                 </li>
               ))}
             </ul>
             <div className="flex items-center gap-5 ml-2">
-              <button className="flex items-center gap-1 text-[#4e4336] text-[15px] tracking-[-0.45px] hover:opacity-55 transition-opacity" aria-label="언어 선택">
+              <button
+                className="flex items-center gap-1 text-[#4e4336] text-[15px] tracking-[-0.45px] hover:opacity-55 transition-opacity"
+                aria-label="언어 선택"
+              >
                 KO <ChevronDown size={12} />
               </button>
               <button className="bg-[#4e4336] text-[#ede1d4] text-[14px] tracking-[-0.42px] px-4 py-[7px] hover:bg-[#5c5143] transition-colors">
@@ -287,7 +490,10 @@ export default function App() {
           {/* Mobile hamburger */}
           <button
             className="xl:hidden text-[#4e4336] p-1 -mr-1"
-            onClick={(e) => { e.stopPropagation(); setMenuOpen((v) => !v); }}
+            onClick={(e) => {
+              e.stopPropagation();
+              setMenuOpen((v) => !v);
+            }}
             aria-label={menuOpen ? "메뉴 닫기" : "메뉴 열기"}
             aria-expanded={menuOpen}
           >
@@ -316,22 +522,28 @@ export default function App() {
               ))}
             </ul>
             <div className="mt-4 flex items-center gap-4">
-              <button className="text-[#a3978a] text-[13px] tracking-[-0.39px]">KO</button>
-              <button className="bg-[#4e4336] text-[#ede1d4] text-[13px] tracking-[-0.39px] px-4 py-1.5 hover:bg-[#5c5143] transition-colors">로그인</button>
+              <button className="text-[#a3978a] text-[13px] tracking-[-0.39px]">
+                KO
+              </button>
+              <button className="bg-[#4e4336] text-[#ede1d4] text-[13px] tracking-[-0.39px] px-4 py-1.5 hover:bg-[#5c5143] transition-colors">
+                로그인
+              </button>
             </div>
           </nav>
         )}
       </header>
 
       <main>
-
         {/* ══════════════════ HERO ══════════════════ */}
         <section
           id="hero"
           className="relative h-[767px] xl:h-[960px] overflow-clip"
           aria-label="메인 비주얼"
         >
-          <div aria-hidden className="absolute inset-0 pointer-events-none">
+          <div
+            aria-hidden
+            className="absolute inset-0 pointer-events-none"
+          >
             <img
               alt="고요 한옥 전경"
               className="absolute object-cover size-full"
@@ -339,20 +551,32 @@ export default function App() {
             />
             <div
               className="absolute inset-0"
-              style={{ background: "linear-gradient(to bottom, transparent 52%, #2b251f 100%)" }}
+              style={{
+                background:
+                  "linear-gradient(to bottom, transparent 52%, #2b251f 100%)",
+              }}
             />
           </div>
 
           {/* Chinese calligraphy vertical title */}
-          <div className="absolute left-1/2 -translate-x-1/2 top-[113px] xl:top-[176px]" aria-hidden="true">
+          <div
+            className="absolute left-1/2 -translate-x-1/2 top-[113px] xl:top-[176px]"
+            aria-hidden="true"
+          >
             <ChineseTitleSvg className="w-[43px] xl:w-[51px] h-auto" />
           </div>
 
           {/* Hero text */}
           <div className="absolute bottom-[90px] md:bottom-[110px] left-0 right-0 flex flex-col items-center text-center px-4 xl:bottom-auto xl:top-[324px] xl:right-[320px] xl:left-auto xl:items-end xl:text-right xl:w-[421px] xl:px-0">
             <p className="font-serif font-normal text-[#ede1d4] xl:text-[#4e4336] text-[18px] md:text-[22px] xl:text-[24px] tracking-[-0.54px] xl:tracking-[-0.72px] leading-[1.65] mb-2 xl:mb-1">
-              <span className="xl:hidden">도심의 소음 너머<br />온전한 쉼이 시작되는 곳,</span>
-              <span className="hidden xl:inline">도심의 소음 너머 온전한 쉼이 시작되는 곳,</span>
+              <span className="xl:hidden">
+                도심의 소음 너머
+                <br />
+                온전한 쉼이 시작되는 곳,
+              </span>
+              <span className="hidden xl:inline">
+                도심의 소음 너머 온전한 쉼이 시작되는 곳,
+              </span>
             </p>
             <p className="font-serif font-normal text-[#ede1d4] xl:text-[#4e4336] text-[48px] xl:text-[52px] leading-[1.0] tracking-[-1.44px] xl:tracking-[-1.56px]">
               고요
@@ -363,8 +587,15 @@ export default function App() {
         {/* ══════════════════ ABOUT + QURATION wrapper ══════════════════ */}
         <div className="relative">
           {/* Texture overlay for about section */}
-          <div aria-hidden className="absolute top-0 left-0 right-0 h-[520px] overflow-hidden pointer-events-none mix-blend-multiply opacity-35">
-            <img alt="" className="w-full h-full object-cover object-top" src="/images/texture/texture-about.png" />
+          <div
+            aria-hidden
+            className="absolute top-0 left-0 right-0 h-[520px] overflow-hidden pointer-events-none mix-blend-multiply opacity-35"
+          >
+            <img
+              alt=""
+              className="w-full h-full object-cover object-top"
+              src="/images/texture/texture-about.png"
+            />
           </div>
 
           {/* ── ABOUT ── */}
@@ -374,22 +605,41 @@ export default function App() {
             aria-labelledby="about-h"
           >
             <div className="max-w-[343px] md:max-w-[750px] xl:max-w-[1280px] mx-auto flex flex-col xl:flex-row xl:items-center xl:justify-between gap-8 xl:gap-0">
-
               <div className="shrink-0 relative w-[100px] h-[36px] md:w-[130px] md:h-[47px] xl:w-[174px] xl:h-[63px]">
                 <GoyoBigLogo className="absolute inset-0 w-full h-full" />
               </div>
 
               <div className="flex flex-col gap-4 xl:gap-6 xl:max-w-[820px]">
-                <h2 id="about-h" className="flex items-end gap-0 text-[#ede1d4] leading-none">
+                <h2
+                  id="about-h"
+                  className="flex items-end gap-0 text-[#ede1d4] leading-none"
+                >
                   <span className="font-sans font-medium text-[18px] md:text-[21px] xl:text-[24px] tracking-[-0.54px] xl:tracking-[-0.72px]">
                     나를 위한 온전한 쉼표
                   </span>
-                  <span className="font-serif font-normal text-[22px] xl:text-[28px] tracking-[-0.66px]">,</span>
+                  <span className="font-serif font-normal text-[22px] xl:text-[28px] tracking-[-0.66px]">
+                    ,
+                  </span>
                 </h2>
                 <div className="flex flex-col gap-5 xl:gap-6 font-sans font-normal text-[14px] md:text-[16px] xl:text-[19px] text-[rgba(237,225,212,0.8)] tracking-[-0.42px] xl:tracking-[-0.57px] leading-[1.75]">
-                  <p>바쁘게 흘러가는 시간 속에서 우리는 종종 '멈춤'의 가치를 잊고 살아갑니다. 한옥의 정갈한 서까래와 자연이 빚어낸 풍경은 우리에게 가장 자연스러운 속도를 되찾아줍니다.</p>
-                  <p>한옥 안에서 마주하는 명인의 정성스러운 손길과 깊이 있는 전통 프로그램은 단순한 머무름의 시간을 넘어 일상에 지친 마음에 깊은 울림과 영감을 채워줍니다.</p>
-                  <p>번잡함을 비워낸 자리에 평온을 채우는 곳. 고요한 한옥 안에서 온전한 쉼의 여정을 시작해 보세요.</p>
+                  <p>
+                    바쁘게 흘러가는 시간 속에서 우리는 종종
+                    '멈춤'의 가치를 잊고 살아갑니다. 한옥의
+                    정갈한 서까래와 자연이 빚어낸 풍경은
+                    우리에게 가장 자연스러운 속도를
+                    되찾아줍니다.
+                  </p>
+                  <p>
+                    한옥 안에서 마주하는 명인의 정성스러운
+                    손길과 깊이 있는 전통 프로그램은 단순한
+                    머무름의 시간을 넘어 일상에 지친 마음에 깊은
+                    울림과 영감을 채워줍니다.
+                  </p>
+                  <p>
+                    번잡함을 비워낸 자리에 평온을 채우는 곳.
+                    고요한 한옥 안에서 온전한 쉼의 여정을 시작해
+                    보세요.
+                  </p>
                 </div>
               </div>
             </div>
@@ -444,34 +694,60 @@ export default function App() {
           aria-labelledby="form-h"
         >
           <div className="max-w-[343px] md:max-w-[750px] xl:max-w-[1280px] mx-auto flex flex-col xl:flex-row xl:items-center xl:justify-between gap-8 xl:gap-0">
-
             {/* Form content */}
             <div className="flex flex-col gap-6 xl:gap-12 w-full xl:w-[555px]">
               <div className="flex flex-col gap-3 xl:gap-5">
-                <h2 id="form-h" className="font-serif font-normal text-[#ede1d4] text-[26px] md:text-[32px] xl:text-[40px] tracking-[-0.78px] xl:tracking-[-1.2px]">
+                <h2
+                  id="form-h"
+                  className="font-serif font-normal text-[#ede1d4] text-[26px] md:text-[32px] xl:text-[40px] tracking-[-0.78px] xl:tracking-[-1.2px]"
+                >
                   머무름 예약
                 </h2>
                 <p className="font-sans font-normal text-[rgba(237,225,212,0.72)] text-[14px] md:text-[17px] xl:text-[21px] tracking-[-0.42px] xl:tracking-[-0.63px] leading-[1.6]">
-                  복잡한 일상에서 벗어나, 한옥에서 보낼 고요한 하루를 골라주세요.
+                  복잡한 일상에서 벗어나, 한옥에서 보낼 고요한
+                  하루를 골라주세요.
                 </p>
               </div>
 
               <div className="flex flex-col gap-2 xl:gap-3">
                 <button className="bg-[#38312a] h-[52px] xl:h-[64px] flex items-center justify-between px-5 xl:px-7 font-sans font-medium text-[#ede1d4] text-[14px] xl:text-[18px] tracking-[-0.42px] xl:tracking-[-0.54px] hover:bg-[#4e4336] transition-colors">
                   <span>어떤 시간을 보내고 싶으신가요?</span>
-                  <ChevronDown size={14} className="shrink-0 opacity-60" />
+                  <ChevronDown
+                    size={14}
+                    className="shrink-0 opacity-60"
+                  />
                 </button>
 
                 <button className="bg-[#38312a] h-[52px] xl:h-[64px] flex items-center gap-3 px-5 xl:px-7 font-sans font-medium text-[#ede1d4] text-[14px] xl:text-[18px] tracking-[-0.42px] hover:bg-[#4e4336] transition-colors">
-                  <svg fill="none" viewBox="0 0 24 24" className="w-5 h-5 xl:w-6 xl:h-6 shrink-0 opacity-70" xmlns="http://www.w3.org/2000/svg">
-                    <path clipRule="evenodd" d={svgPaths.p18868900} fill="#EDE1D4" fillRule="evenodd" />
+                  <svg
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    className="w-5 h-5 xl:w-6 xl:h-6 shrink-0 opacity-70"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      clipRule="evenodd"
+                      d={svgPaths.p18868900}
+                      fill="#EDE1D4"
+                      fillRule="evenodd"
+                    />
                   </svg>
                   <span>날짜 선택</span>
                 </button>
 
                 <button className="bg-[#38312a] h-[52px] xl:h-[64px] flex items-center gap-3 px-5 xl:px-7 font-sans font-medium text-[#ede1d4] text-[14px] xl:text-[18px] tracking-[-0.42px] hover:bg-[#4e4336] transition-colors">
-                  <svg fill="none" viewBox="0 0 24 24" className="w-5 h-5 xl:w-6 xl:h-6 shrink-0 opacity-70" xmlns="http://www.w3.org/2000/svg">
-                    <path clipRule="evenodd" d={svgPaths.p20027c00} fill="#EDE1D4" fillRule="evenodd" />
+                  <svg
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    className="w-5 h-5 xl:w-6 xl:h-6 shrink-0 opacity-70"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      clipRule="evenodd"
+                      d={svgPaths.p20027c00}
+                      fill="#EDE1D4"
+                      fillRule="evenodd"
+                    />
                   </svg>
                   <span>인원 선택</span>
                 </button>
@@ -510,10 +786,30 @@ export default function App() {
             </div>
 
             <HScrollWrap>
-              <TradCard img="/images/traditional-culture/dasik.jpg" alt="다식만들기 체험" label="달콤한 전통의 맛," title="다식만들기" />
-              <TradCard img="/images/traditional-culture/pottery.jpg" alt="도자기 공예 체험" label="흙으로 빚어내는 시간," title="도자기 공예" />
-              <TradCard img="/images/traditional-culture/hanbok.jpg" alt="한복과 예절 체험" label="옷끝에 배어나는 품격," title="한복과 예절 체험" />
-              <TradCard img="/images/traditional-culture/tteok.jpg" alt="전통 떡메치기 체험" label="정성을 들여 만드는 찰진 맛," title="전통 떡메치기" />
+              <TradCard
+                img="/images/traditional-culture/dasik.jpg"
+                alt="다식만들기 체험"
+                label="달콤한 전통의 맛,"
+                title="다식만들기"
+              />
+              <TradCard
+                img="/images/traditional-culture/pottery.jpg"
+                alt="도자기 공예 체험"
+                label="흙으로 빚어내는 시간,"
+                title="도자기 공예"
+              />
+              <TradCard
+                img="/images/traditional-culture/hanbok.jpg"
+                alt="한복과 예절 체험"
+                label="옷끝에 배어나는 품격,"
+                title="한복과 예절 체험"
+              />
+              <TradCard
+                img="/images/traditional-culture/tteok.jpg"
+                alt="전통 떡메치기 체험"
+                label="정성을 들여 만드는 찰진 맛,"
+                title="전통 떡메치기"
+              />
             </HScrollWrap>
           </div>
         </section>
@@ -561,8 +857,15 @@ export default function App() {
           className="relative px-4 py-14 md:px-[120px] md:py-20 xl:px-[320px] xl:py-[140px]"
           aria-labelledby="review-h"
         >
-          <div aria-hidden className="absolute inset-0 overflow-hidden pointer-events-none mix-blend-multiply opacity-20">
-            <img alt="" className="absolute bottom-0 left-0 right-0 w-full h-[55%] object-cover object-top" src="/images/texture/texture-review.png" />
+          <div
+            aria-hidden
+            className="absolute inset-0 overflow-hidden pointer-events-none mix-blend-multiply opacity-20"
+          >
+            <img
+              alt=""
+              className="absolute bottom-0 left-0 right-0 w-full h-[55%] object-cover object-top"
+              src="/images/texture/texture-review.png"
+            />
           </div>
 
           <div className="relative max-w-[343px] md:max-w-[750px] xl:max-w-[1280px] mx-auto flex flex-col gap-6 xl:gap-10">
@@ -595,7 +898,6 @@ export default function App() {
             </HScrollWrap>
           </div>
         </section>
-
       </main>
 
       {/* ══════════════════ FOOTER ══════════════════ */}
@@ -607,7 +909,10 @@ export default function App() {
         </div>
 
         <div className="relative overflow-clip h-[340px] md:h-[480px] xl:h-[880px] w-full">
-          <div aria-hidden className="absolute inset-0 pointer-events-none">
+          <div
+            aria-hidden
+            className="absolute inset-0 pointer-events-none"
+          >
             <img
               alt="고요 한옥 전경"
               className="absolute object-cover size-full"
@@ -615,7 +920,10 @@ export default function App() {
             />
             <div
               className="absolute inset-0"
-              style={{ background: "linear-gradient(to top, #2b251f 28%, rgba(43,37,31,0.72) 48%, rgba(43,37,31,0.22) 68%, transparent 88%)" }}
+              style={{
+                background:
+                  "linear-gradient(to top, #2b251f 28%, rgba(43,37,31,0.72) 48%, rgba(43,37,31,0.22) 68%, transparent 88%)",
+              }}
             />
           </div>
 
@@ -626,9 +934,16 @@ export default function App() {
 
             <nav aria-label="푸터 메뉴">
               <ul className="flex flex-col items-center gap-2 md:gap-3 xl:flex-row xl:gap-8">
-                {["개인정보처리방침", "서비스 약관", "고객센터"].map((label) => (
+                {[
+                  "개인정보처리방침",
+                  "서비스 약관",
+                  "고객센터",
+                ].map((label) => (
                   <li key={label}>
-                    <a href="#" className="font-sans font-normal text-[rgba(237,225,212,0.75)] text-[12px] md:text-[14px] xl:text-[16px] tracking-[-0.36px] hover:text-[#ede1d4] transition-colors">
+                    <a
+                      href="#"
+                      className="font-sans font-normal text-[rgba(237,225,212,0.75)] text-[12px] md:text-[14px] xl:text-[16px] tracking-[-0.36px] hover:text-[#ede1d4] transition-colors"
+                    >
                       {label}
                     </a>
                   </li>
@@ -638,7 +953,12 @@ export default function App() {
 
             <address className="font-sans font-normal not-italic text-[rgba(237,225,212,0.5)] text-[11px] md:text-[13px] xl:text-[14px] tracking-[-0.33px] xl:tracking-[-0.42px] text-center leading-[1.9] flex flex-col gap-0.5 xl:gap-1">
               <p>(08288) 서울특별시 구로구 새말로 97</p>
-              <a href="mailto:contact@goyo.kr" className="hover:text-[rgba(237,225,212,0.75)] transition-colors">contact@goyo.kr</a>
+              <a
+                href="mailto:contact@goyo.kr"
+                className="hover:text-[rgba(237,225,212,0.75)] transition-colors"
+              >
+                contact@goyo.kr
+              </a>
             </address>
 
             <p className="font-sans font-normal text-[rgba(237,225,212,0.35)] text-[10px] md:text-[11px] xl:text-[13px] tracking-[-0.3px]">
@@ -647,7 +967,6 @@ export default function App() {
           </div>
         </div>
       </footer>
-
     </div>
   );
 }
